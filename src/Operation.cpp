@@ -3,6 +3,8 @@
 // 
 
 #include "Operation.h"
+#include <SoftwareSerial.h>
+
 
 vector<Cocktail> Operation::preset_cocktail()
 {
@@ -60,12 +62,26 @@ void Operation::preset_oled()
 }
 
 
-// 함수 여러개로 분할할까...
+void Operation::bluetooth_connect()//preset_bluetooth()로 할까
+{
+	if (blueToothSerial.available()) {
+		char message = blueToothSerial.read();
+		if (message <= '0' && message <= '15') {//어플에서 char형으로 보내야됨
+			//OLED 문자 출력 "Bluetooth is connected"
+			delay(3000);
+			//LED 스트립 on
+			delay(3000);
+		}
+	}
+}
+
+
+// 함수 여러개로 분할할까...-> 분할하는게 좋을거라 생각했는데 좀 애매하네..(인스턴스 생성함수/디스펜서+펌프/
 int Operation::make_cocktail(Cocktail ct)
 {
 	// creating temp instances
 	// 얘네들을 어떻게 처리할까? 
-	// 그냥 인스턴스 생성해서 쓰는거면 프리셋도 필요 없겠는데...
+	// 그냥 인스턴스 생성해서 쓰는거면 프리셋도 필요 없겠는데...->led,oled 프리셋 함수는 화면 비우는 걸 생각하신건가요??
 	Oled oled_instance;
 	LedStrip led_instance;
 	Coord coord_instance;
@@ -74,7 +90,6 @@ int Operation::make_cocktail(Cocktail ct)
 
 
 	// checking remains...
-
 
 
 	// OLED display name of the cocktail

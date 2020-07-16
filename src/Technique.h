@@ -9,7 +9,7 @@
 	#include "WProgram.h"
 #endif
 
-
+//methodµÈ¿ª numbering
 enum class TechniqueMethod {
 	BUILD,
 	STIR,

@@ -29,10 +29,9 @@ public:
 	void preset_ledstrip();
 	void preset_oled();
 	// 근데 생략하고 직접 하나씩 해줘도 될 듯?
-
+	void bluetooth_connect();
 	// 만드는 함수 (loop)
 	int make_cocktail(Cocktail ct);
-
 	int emergency_stop();
 };
 
