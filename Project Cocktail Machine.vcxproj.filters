@@ -48,6 +48,9 @@
     <ClInclude Include="src\Technique.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Led.cpp">
@@ -68,5 +71,10 @@
     <ClCompile Include="src\Technique.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Project Cocktail Machine.rc">
+      <Filter>Misc Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

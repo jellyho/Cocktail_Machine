@@ -10,8 +10,8 @@ Coord Plate::get_current_position() {
 
 
 void Plate::set_stepper_speed(long a_speed) {
-    this-> stepper_x.setSpeed(a_speed);
-    this-> stepper_y.setSpeed(a_speed);
+    stepper_x.setSpeed(a_speed);
+    stepper_y.setSpeed(a_speed);
 }
 
 
@@ -58,4 +58,3 @@ void Plate::move_to_initial_position()
     }
 
 }
-

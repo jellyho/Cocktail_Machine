@@ -23,7 +23,7 @@ private:
 	TechniqueMethod method;
 public:
 	void f(TechniqueMethod method);
-	Technique set_technique(TechniqueMethod tm) { method = tm; }
+	void set_technique(TechniqueMethod tm) { method = tm; }
 
 };
 
