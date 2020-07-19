@@ -51,7 +51,7 @@
     <ClInclude Include="__vm\.Cocktail-Machine.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Actuator.h">
+    <ClInclude Include="src\Actuator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
