@@ -38,6 +38,7 @@ private:
     // 핀 넘버는 생성자 함수에서 직접 전달하는거 어떻습니까? - 논의 필요
     const int PIN_ENDSTOP_X = 12;
     const int PIN_ENDSTOP_Y = 13;
+    const int PIN_ENDSTOP_Z = 14;
 
     const int PIN_ACTUATOR_A = 12345;
     const int PIN_ACTUATOR_B = 67890;

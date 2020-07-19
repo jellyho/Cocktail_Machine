@@ -10,7 +10,9 @@ Led::Led(int a_numpixel, int a_pin) {
     PIN_LED = a_pin;
     strip = Adafruit_NeoPixel(numpixels, PIN_LED, NEO_GRB + NEO_KHZ800);
     strip.begin();
-    set_brightness(150);
+    strip.clear();
+    brightness = 50;
+    set_brightness(brightness);
     strip.show();
     user_delay = 100;
 } // note: 코드 순서 바꾸지 말 것.

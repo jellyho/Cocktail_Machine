@@ -124,8 +124,10 @@ void Plate::push_dispenser(int a_amount)
 
     // 맨 끝에 도달하면 액츄에이터 인가 전압 해제
     while (!z_touch) {
-        a.idle();
-        z_touch = true;
+        if (digitalRead(PIN_ENDSTOP_Z)) {
+            a.idle();
+            z_touch = true;
+        }
     }
 
 }
