@@ -10,24 +10,17 @@
 #endif
 
 #include <Stepper.h> 
-
-/*
-Stepper stepper_x(200, 2, 3, 4, 5);
-Stepper stepper_y(200, 1, 2, 3, 4);
-
-extern Stepper stepper_x(200, 1,2,3,4);
-extern Stepper stepper_y(200, 1, 2, 3, 4);
-*/
+#include "Actuator.h"
 
 //************* Coord 스트럭트 정의 ******************//
 struct Coord {
-    int pos_x, pos_y, pos_z;
-    Coord() { pos_x = 0;  pos_y = 0;  pos_z = 0; }
+    int pos_x, pos_y;
+    Coord() { pos_x = 0;  pos_y = 0; }
     Coord(int ax, int ay, int az) {
-        pos_x = ax;  pos_y = ay;  pos_z = az;
+        pos_x = ax;  pos_y = ay;
     }
-    Coord& set(int ax = 0, int ay = 0, int az = 0) {
-        pos_x = ax;  pos_y = ay;  pos_z = az;
+    Coord& set(int ax = 0, int ay = 0) {
+        pos_x = ax;  pos_y = ay;
     }
 };
 //***************************************************//
@@ -37,19 +30,21 @@ struct Coord {
 
 class Plate {
 private:
-    const static int STEPS_PER_REVOLUTION = 200;
-    const static int STEPPER_SPEED = 30;
+    const int STEPS_PER_REVOLUTION = 200;
+    int STEPPER_SPEED = 30;
 
+    Coord position; // 현재 자기의 위치
 
-    Coord position;
+    // 핀 넘버는 생성자 함수에서 직접 전달하는거 어떻습니까? - 논의 필요
+    const int PIN_ENDSTOP_X = 12;
+    const int PIN_ENDSTOP_Y = 13;
 
-    const int PIN_ENDSTOP_X = 10;
-    const int PIN_ENDSTOP_Y = 11;
-    const int PIN_ENDSTOP_Z = 12;
+    const int PIN_ACTUATOR_A = 12345;
+    const int PIN_ACTUATOR_B = 67890;
 
     // void형 포인터를 사용해서, Steper를 생성하고 그 주소를 여기다 할당합시다.
-    void* p_stepper_x;
-    void* p_stepper_y;
+    Stepper* p_stepper_x;
+    Stepper* p_stepper_y;
 
     // 액츄에이터 관련 코드도 추가해야함.
     //=>모터드라이브 추가해야한다는 거죠??
@@ -61,15 +56,14 @@ private:
     const int VPIN = 6;//속도(velocity) pwm 제어 핀
     */
 
-    // 핀 넘버는 생성자 함수에서 직접 전달하는거 어떻습니까?
+
 
 public:
     Plate();
     ~Plate();
-    //아닌것같음..근데 이거 밖에 안됨 원래 위에 선언하고 밑에 쓸때마다 extern 붙이는거아닌가 근데 찾아보니 class instance에 extern되도록이면 쓰지말라고 함
 
     Coord get_current_position();
-    void move_horizontally(Coord a_des_pos);
+    void move_to(Coord a_des_pos);
     void move_to_initial_position();
     void set_stepper_speed(long a_speed);
     void push_dispenser(int a_amount);
