@@ -112,6 +112,7 @@
     <None Include="src\Project Cocktail Machine.ino" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actuator.h" />
     <ClInclude Include="src\Cocktail.h" />
     <ClInclude Include="src\Led.h" />
     <ClInclude Include="src\Material.h" />
