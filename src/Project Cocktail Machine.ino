@@ -24,14 +24,25 @@
 
 // ========= user-defined headers =========
 
-#include "Operation.h"
+// #include "Operation.h"
+#include "Pump.h"
 
-
+#define _TECHNIQUE_h
+#define _PLATE_h
+#define _OPERATION_h
+#define _OLED_h
+#define _MATERIAL_h
+#define _LED_h
+#define _COCKTAIL_h
+// #define _PUMP_h
 
 // ========================================
 
 
 void setup() {
+	Pump p(1, 2);
+	
+	p.work_pump(50);
 
 }
 

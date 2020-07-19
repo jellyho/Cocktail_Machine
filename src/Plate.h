@@ -38,9 +38,7 @@ private:
 	 
 
 	Coord position;
-	/*Stepper stepper_x;
-	Stepper stepper_y;
-	*/
+
 	const int PIN_ENDSTOP_X = 1;
 	const int PIN_ENDSTOP_Y = 2;
 	const int PIN_ENDSTOP_Z = 3;
