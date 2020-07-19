@@ -4,9 +4,9 @@
 
 #include "Technique.h"
 
-Led* ledstrip1;
-Led* ledstrip2;
-Led* ledpanel;
+extern Led* ledstrip1;
+extern Led* ledstrip2;
+extern Led* ledpanel;
 
 
 // Ω∫≈Õ:
