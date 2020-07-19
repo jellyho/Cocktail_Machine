@@ -16,7 +16,7 @@
 struct Coord {
     int pos_x, pos_y;
     Coord() { pos_x = 0;  pos_y = 0; }
-    Coord(int ax, int ay, int az) {
+    Coord(int ax, int ay) {
         pos_x = ax;  pos_y = ay;
     }
     Coord& set(int ax = 0, int ay = 0) {
@@ -65,6 +65,7 @@ public:
 
     Coord get_current_position();
     void move_to(Coord a_des_pos);
+    void move_to(int px, int py); // 함수 오버라이딩
     void move_to_initial_position();
     void set_stepper_speed(long a_speed);
     void push_dispenser(int a_amount);

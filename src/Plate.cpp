@@ -76,6 +76,25 @@ void Plate::move_to(Coord a_des_pos)
     this->position.pos_y += y_diff;
 }
 
+void Plate::move_to(int px, int py)
+{
+    // 인자의 인트를 받아 목표 좌표로 설정
+    Coord a_des_pos(px, py);
+    // 아래 함수로 현재 좌표를 받아 (current_position)
+    Coord current_position = get_current_position();
+
+    // x방향, y방향 각각 차이를 계산하고 그만큼 움직인다.
+    // x 방향 이동
+    int x_diff = a_des_pos.pos_x - current_position.pos_x;
+    (p_stepper_x)->step(x_diff);
+    this->position.pos_x += x_diff;
+
+    // y 방향 이동
+    int y_diff = a_des_pos.pos_y - current_position.pos_y;
+    (p_stepper_y)->step(y_diff);
+    this->position.pos_y += y_diff;
+}
+
 
 // 호출되면 (0,0)으로 돌아가고, 좌표도 초기화됨.
 void Plate::move_to_initial_position()
