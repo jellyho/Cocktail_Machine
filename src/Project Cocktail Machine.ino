@@ -10,7 +10,7 @@
 // 여기 있는 것들 옮겨 ㅅㅂ
 
 #include <Stepper.h>
-#include <ArduinoSTL.h>
+//#include <ArduinoSTL.h>
 
 #include <splash.h>
 #include <Adafruit_SSD1306.h>
@@ -24,8 +24,11 @@
 
 // ========= user-defined headers =========
 
-// #include "Operation.h"
+#include "Operation.h"
 #include "Pump.h"
+#include "Led.h"
+#include "Pump.h"
+
 
 #define _TECHNIQUE_h
 #define _PLATE_h
@@ -34,15 +37,17 @@
 #define _MATERIAL_h
 #define _LED_h
 #define _COCKTAIL_h
-// #define _PUMP_h
+#define _PUMP_h
 
-// ========================================
+// ============ global pointers ==============
+/*Led* p_ledstrip1;  Led* p_ledstrip2;  Led* p_ledpanel;
+Pump* p_pump1;  Pump* p_pump2;  Pump* p_pump3;  Pump* p_pump4;
+Pump* p_pump5;  Pump* p_pump6;  Pump* p_pump7;*/
 
 
 void setup() {
-	Pump p(1, 2);
 	
-	p.work_pump(50);
+	Serial.begin(9600);
 
 }
 
@@ -50,3 +55,14 @@ void setup() {
 void loop() {
   
 }
+
+
+
+// =============== user-defined functions =================
+
+
+void preset_pump_instances()
+{
+
+}
+

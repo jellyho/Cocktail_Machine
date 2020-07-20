@@ -23,14 +23,20 @@ private:
 
 public:
 	// 프리셋 함수 (setup)
-	vector<Cocktail> preset_cocktail();
-	// 컴파일러가 알아서 레퍼런스 방식으로 해준다길래 리턴형식을 벡터로 함.
-	array<Pump, 5> preset_pumps(); // 5개
-	void preset_ledstrip();
-	void preset_oled();
-	// 근데 생략하고 직접 하나씩 해줘도 될 듯?
+		// 인스턴스 셋업하기 (Led 3, Pump 7)
+	void preset_led_instances();
+	void preset_pump_instances();
+
+		// 정보 셋업하기 (재료들의 위치, 칵테일 레시피)
+	void preset_dispenser_materials();
+	void preset_pump_materials();
+	void preset_cocktail_recipes();
+
+	// 소멸자 함수
+	~Operation();
+
+	// 작동 함수
 	void bluetooth_connect();
-	// 만드는 함수 (loop)
 	int make_cocktail(Cocktail ct);
 	int emergency_stop();
 };

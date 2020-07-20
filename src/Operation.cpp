@@ -6,62 +6,96 @@
 #include <SoftwareSerial.h>
 
 
-vector<Cocktail> Operation::preset_cocktail()
+// ******************** main의 전역 포인터 가져오기 ******************
+extern Led* p_ledstrip1;  extern Led* p_ledstrip2;  
+extern Led* p_ledpanel;
+extern Pump* p_pump1;  extern Pump* p_pump2;  
+extern Pump* p_pump3;  extern Pump* p_pump4;
+extern Pump* p_pump5;  extern Pump* p_pump6;  
+extern Pump* p_pump7;
+
+
+
+// *************************** 프리셋 함수들 *************************
+void Operation::preset_led_instances()
 {
-	vector<Cocktail> lists;
-	map<DispenserMaterial, double> disp_temp;
-	map<PumpMaterial, double> pump_temp;
+	Led ledstrip1(50, 31); // led 개수, 핀넘버
+	Led ledstrip2(50, 32);
+	Led ledpanel(256, 33);
+
+	p_ledstrip1 = (Led*)malloc(sizeof(ledstrip1));
+	p_ledstrip2 = (Led*)malloc(sizeof(ledstrip2));
+	p_ledpanel = (Led*)malloc(sizeof(ledpanel));
+
+	*(p_ledstrip1) = ledstrip1;
+	*(p_ledstrip2) = ledstrip2;
+	*(p_ledpanel) = ledpanel;
+}
+
+void Operation::preset_pump_instances() 
+{
+	Pump pump1(23, 24); // 핀A, 핀B
+	Pump pump2(25, 26);
+	Pump pump3(27, 28);
+	Pump pump4(29, 30);
+	Pump pump5(31, 32);
+	Pump pump6(33, 34);
+	Pump pump7(35, 36);
+
+	p_pump1 = (Pump*)malloc(sizeof(pump1));
+	p_pump2 = (Pump*)malloc(sizeof(pump2));
+	p_pump3 = (Pump*)malloc(sizeof(pump3));
+	p_pump4 = (Pump*)malloc(sizeof(pump4));
+	p_pump5 = (Pump*)malloc(sizeof(pump5));
+	p_pump6 = (Pump*)malloc(sizeof(pump6));
+	p_pump7 = (Pump*)malloc(sizeof(pump7));
 
 
-	// 디스펜서 재료 아래에 추가하기;
-	DispenserMaterial vodka("vodka", 30, 30, 750, 50, 50, 200);
+	*(p_pump1) = pump1;
+	*(p_pump2) = pump2;
+	*(p_pump3) = pump3;
+	*(p_pump4) = pump4;
+	*(p_pump5) = pump5;
+	*(p_pump6) = pump6;
+	*(p_pump7) = pump7;
+}
 
-	// 펌프 재료 아래에 추가하기;
-	PumpMaterial orange_juice("orange_juice", 500, 30, 450, 230, 120, 0);
+// 정보 셋업하기 (재료들의 위치, 칵테일 레시피)
+void Operation::preset_dispenser_materials() 
+{
 
-	// 칵테일 인스턴스 만들기 (4줄단위); 
-	// (근데 안에있는 정보까지 복사되나?) - ???? (테스트 해보고 안되면 포인터로 해야됨 ㅠㅠ)
-	// 차라리 enum으로 번호 지정해서 포인터연산 쓰는건 어떰?
-	disp_temp = { {vodka, 70}, };
-	pump_temp = { {orange_juice, 50}, };
-	Cocktail skrew_driver("skrew_driver", TechniqueMethod::BUILD, disp_temp, pump_temp);
-	lists.push_back(skrew_driver);
+}
 
+void Operation::preset_pump_materials()
+{
 
-	return lists;
+}
+
+void Operation::preset_cocktail_recipes()
+{
+
 }
 
 
 
-// 펌프 프리셋 함수; ok
-array<Pump, 5> Operation::preset_pumps()
+// ************************* 소멸자 함수 **************************
+Operation::~Operation() // 동적으로 할당해준 주소들을 해제해 준다.
 {
-	array<Pump, 5> temp;
-
-	// 이 값들은 수동으로 입력해 줄 것.
-	temp[0] = Pump(1, 2);
-	temp[1] = Pump(3, 4);
-	temp[2] = Pump(5, 6);
-	temp[3] = Pump(7, 8);
-	temp[4] = Pump(9, 10);
-
-	return temp;
+	free(p_ledstrip1);
+	free(p_ledstrip2);
+	free(p_ledpanel);
+	free(p_pump1);
+	free(p_pump2);
+	free(p_pump3);
+	free(p_pump4);
+	free(p_pump5);
+	free(p_pump6);
+	free(p_pump7);
 }
 
 
-// LED STRIP 프리셋 함수;
-void Operation::preset_ledstrip()
-{
 
-}
-
-// OLED 프리셋 함수
-void Operation::preset_oled()
-{
-
-}
-
-
+// ********************** 작동을 위한 함수들 *********************
 void Operation::bluetooth_connect()//preset_bluetooth()로 할까
 {
 	if (blueToothSerial.available()) {

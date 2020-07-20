@@ -74,5 +74,8 @@
     <ClCompile Include="src\Technique.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\temp.cpp">
+      <Filter>Misc Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
