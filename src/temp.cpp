@@ -2,6 +2,7 @@
 operation.cpp에 작성했었던 예전 프리셋 함수 메모
 */
 
+/*
 vector<Cocktail> Operation::preset_cocktail()
 {
 	vector<Cocktail> lists;
@@ -56,3 +57,4 @@ void Operation::preset_oled()
 {
 
 }
+*/

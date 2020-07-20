@@ -2,6 +2,8 @@
 // ok
 // 
 
+#if 0
+
 #include "Pump.h"
 
 
@@ -36,3 +38,5 @@ void Pump::work_pump(double amount) {
 	stop_pump();
 }
 
+
+#endif

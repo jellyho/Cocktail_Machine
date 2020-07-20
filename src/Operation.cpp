@@ -2,6 +2,9 @@
 // 임포트 한 클래스들이 많이 바뀌어서, 어차피 얘도 많이 바꿔야함.
 // 
 
+#if 0
+
+
 #include "Operation.h"
 #include <SoftwareSerial.h>
 
@@ -199,3 +202,6 @@ int Operation::emergency_stop()
 	exit;
 	return 0;
 }
+
+
+#endif

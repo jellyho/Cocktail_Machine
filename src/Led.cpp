@@ -2,6 +2,8 @@
 // ok
 // 
 
+#if 0
+
 #include "Led.h"
 
 // 생성자 함수: led 사용을 위해 초기화함
@@ -110,3 +112,4 @@ uint32_t Led::Wheel(byte WheelPos) {
 
 
 
+#endif

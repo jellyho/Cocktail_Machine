@@ -2,6 +2,8 @@
 // ok
 // 
 
+#if 0
+
 #include "Technique.h"
 
 extern Led* ledstrip1;
@@ -75,3 +77,5 @@ void Technique::f(TechniqueMethod method) {
 
 }
 
+
+#endif

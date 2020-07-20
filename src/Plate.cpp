@@ -1,6 +1,8 @@
 // 
-// 왜인지는 모르겠지만 Stepper 인스턴스가 생성이 안돼!! ㅅㅂ
-// 차라리 깃헙에 있는 코드를 내가 쓰는 것도 나쁘지 않음
+// 
+// 
+
+#if 0
 
 #include "Plate.h"
 
@@ -150,3 +152,6 @@ void Plate::push_dispenser(int a_amount)
     }
 
 }
+
+
+#endif

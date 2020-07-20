@@ -2,6 +2,8 @@
 // 수정 필요
 // 
 
+#if 0
+
 #include "Oled.h"
 Oled::Oled() {
 	//idisplay(4);
@@ -78,3 +80,6 @@ void Oled::clear() {
 	idisplay.clearDisplay();
 	idisplay.display();
 }
+
+
+#endif
