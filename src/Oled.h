@@ -1,7 +1,7 @@
 // Oled.h
 
-#ifndef _OLED_h
-#define _OLED_h
+#if 0
+#pragma once
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"

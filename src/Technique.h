@@ -1,7 +1,7 @@
 // Technique.h
 
-#ifndef _TECHNIQUE_h
-#define _TECHNIQUE_h
+#if 0
+#pragma once
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"

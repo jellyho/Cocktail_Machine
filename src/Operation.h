@@ -1,7 +1,7 @@
 // Operation.h
 
-#ifndef _OPERATION_h
-#define _OPERATION_h
+#if 0
+#pragma once
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"

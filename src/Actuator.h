@@ -1,7 +1,7 @@
 // Cocktail.h
 
-#ifndef _ACTUATOR_h
-#define _ACTUATOR_h
+#if 0
+#pragma once
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"

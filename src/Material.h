@@ -1,7 +1,7 @@
 // Material.h
 
-#ifndef _MATERIAL_h
-#define _MATERIAL_h
+#if 0
+#pragma once
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"
