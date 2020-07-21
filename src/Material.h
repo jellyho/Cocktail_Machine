@@ -27,6 +27,7 @@ public:
 	int get_amount() { return remain; }
 	void set_amount(int a_remain) { remain = a_remain; }
 	int* get_rgb() { return rgb; }
+
 };
 
 
@@ -81,7 +82,7 @@ class DispenserMaterial :
 public:
 	DispenserMaterial(String aname, int a_num, double a_remain, int ar, int ag, int ab)
 		: Material(aname, a_num, a_remain, ar, ag, ab) { }
-
+	
 };
 
 class PumpMaterial :
