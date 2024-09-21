@@ -1,7 +1,7 @@
 # Cocktail-Machine
 2020년 여름방학 로보인 기업연계프로젝트: 나만의 자동 홈 칵테일 바
 
-Tablet Application -> ![BarApp.aia](https://github.com/jellyho/Cocktail_Machine/blob/master/BarApp.aia)
+Tablet Application -> MIT AppInventor File ![BarApp.aia](https://github.com/jellyho/Cocktail_Machine/blob/master/BarApp.aia)
 
 ![image](https://github.com/user-attachments/assets/17eeb20e-f029-46dc-806f-50b6692c269b)
 
